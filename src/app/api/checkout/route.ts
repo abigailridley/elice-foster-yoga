@@ -26,6 +26,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ url: session.url });
   } catch (err) {
+    console.error('Stripe Checkout Session Error:', err);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
